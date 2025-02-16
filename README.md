@@ -6,7 +6,7 @@ This project implements a full-stack solution that displays a report of the top-
 
 ## Technologies Used
 
-- **Frontend**: Angular (TypeScript)
+- **Frontend**: Angular (TypeScript), SCSS and Material Angular for styling
 - **Backend**: .NET 8 (C#)
 - **Data Source**: CSV (orders.csv)
 
@@ -31,14 +31,21 @@ This project implements a full-stack solution that displays a report of the top-
    cd backend
 
 2. Run the backend API:
+    ```bash
     dotnet run
 
 ### Setting Up the Frontend
 
 - Navigate to the frontend directory: frontend
-- Install dependencies: npm install
-- Run the Angular application: ng serve
-- The frontend will be available at http://localhost:4200.
+- Install dependencies:
+   ```bash
+   npm install
+- Run the Angular application:
+  ```bash
+  ng serve
+- The frontend will be available at
+  ```bash
+  http://localhost:4200
 
 ### Usage
 

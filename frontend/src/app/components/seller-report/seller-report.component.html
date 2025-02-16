@@ -1,0 +1,44 @@
+<ng-container *ngIf="initialLoad; else dataTable">
+  <div class="select-message">
+    <h3>Please select a branch to view data</h3>
+  </div>
+</ng-container>
+<ng-template #dataTable>
+  <ng-container  *ngIf="!loading; else loader">
+    <mat-card appearance="raised" class="table-card">
+      <mat-card-content>
+        <table mat-table [dataSource]="topSellers">
+          <ng-container matColumnDef="month">
+            <th mat-header-cell *matHeaderCellDef>Month</th>
+            <td mat-cell *matCellDef="let seller">{{ seller.month }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="sellerName">
+            <th mat-header-cell *matHeaderCellDef>Seller Name</th>
+            <td mat-cell *matCellDef="let seller">{{ seller.seller }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="totalOrders">
+            <th mat-header-cell *matHeaderCellDef>Total Orders</th>
+            <td mat-cell *matCellDef="let seller">{{ seller.totalOrders }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="totalPrice">
+            <th mat-header-cell *matHeaderCellDef>Total Price</th>
+            <td mat-cell *matCellDef="let seller">{{ seller.totalPrice | currency }}</td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="['month', 'sellerName', 'totalOrders', 'totalPrice']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['month', 'sellerName', 'totalOrders', 'totalPrice']"></tr>
+
+          <div *matNoDataRow style="margin: 1em">No records to display</div>
+        </table>
+      </mat-card-content>
+    </mat-card>
+
+  </ng-container>
+
+  <ng-template #loader>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+</ng-template>

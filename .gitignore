@@ -1,0 +1,25 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/backend/.vs/TmoTask
+
+# .NET Core
+/backend/bin/
+/backend/obj/
+/backend/*.dll
+/backend/*.pdb
+/backend/*.exe
+/backend/*.user
+/backend/*.vspscc
+/backend/*.vssscc
+/backend/*.sln.docstates
+
+# Temporary files
+/backend/*.tmp
+/backend/*.temp
+/backend/*.log
+
+# Other unwanted files
+/backend/*.swp
+/backend/*.swo

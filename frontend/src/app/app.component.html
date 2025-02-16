@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Top Performing Sellers Report</span>
+</mat-toolbar>
+
+<br />
+
+<app-branch-filter (branchSelected)="sellerReport.onBranchSelected($event)"></app-branch-filter>
+
+<app-seller-report #sellerReport></app-seller-report>
+
+
+<router-outlet />
